@@ -34,6 +34,7 @@ public class Grid {
 
         // Add Foes that you would need to battle or interact with...
         kingdom[1][2].addFoe(new Foe("Guart", 7));
+        kingdom[0][2].addFoe(new Foe("Guart the Second", 8));
         kingdom[0][3].addFoe(new Foe("Tickle Monster", 2));
         kingdom[2][3].addFoe(new Foe("Nolan & Ben Fusion: Nolen Levarid", 67));
 
