@@ -29,9 +29,10 @@ public class Grid {
         // Add some items in rooms that need Items...
         kingdom[0][2].addItem(new Treasure("Purse", 10));
         kingdom[1][0].addItem(new Treasure("Coin", 5));
-        kingdom[0][4].addItem(new Treasure("Sword", 1));
+       
 
         kingdom[1][2].addItem(new Treasure("Key", 50));
+        kingdom[0][4].addItem(new Weapon("Sword", 1));
         kingdom[1][1].addItem(new Weapon("Knife", 5));
 
         // Add Foes that you would need to battle or interact with...
