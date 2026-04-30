@@ -29,6 +29,7 @@ public class Grid {
         // Add some items in rooms that need Items...
         kingdom[0][2].addItem(new Treasure("Purse", 10));
         kingdom[1][0].addItem(new Treasure("Coin", 5));
+        kingdom[0][4].addItem(new Treasure("Sword", 1));
 
         kingdom[1][2].addItem(new Treasure("Key", 50));
         kingdom[1][1].addItem(new Weapon("Knife", 5));
@@ -37,6 +38,7 @@ public class Grid {
         kingdom[1][2].addFoe(new Foe("Guart", 7));
         kingdom[0][2].addFoe(new Foe("Guart the Second", 8));
         kingdom[0][3].addFoe(new Foe("Tickle Monster", 2));
+        kingdom[2][3].addFoe(new Foe("Nolan & Ben Fusion: Nolen Levarid", 67));
 
     }
 
@@ -45,7 +47,7 @@ public class Grid {
         // needs implementation
     }
 
-    // add an Foe to a random place on the grid
+    // add an Item to a random place on the grid
     public void addFoeToPlace(Foe f) {
         // needs implementation
     }
