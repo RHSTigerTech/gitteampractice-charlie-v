@@ -56,6 +56,11 @@ public class Classroom {
                 CrockettsClassroom[5][2] = new Place("Empty desk", "An empty desk.");
                 CrockettsClassroom[5][3] = new Place("Empty desk", "An empty desk.");
 
+                CrockettsClassroom[5][6] = new Place("Empty desk", "An empty desk.");
+                CrockettsClassroom[5][7] = new Place("Empty desk", "An empty desk.");
+                CrockettsClassroom[5][8] = new Place("Empty desk", "An empty desk.");
+                CrockettsClassroom[5][9] = new Place("Empty desk", "An empty desk.");
+
                 CrockettsClassroom[6][9] = new Place("Empty desk", "An empty desk.");
 
                 CrockettsClassroom[7][0] = new Place("Empty desk", "An empty desk.");
@@ -95,17 +100,38 @@ public class Classroom {
                 CrockettsClassroom[11][5] = new Place("Projector",
                                 "A projector that is usually used during video notes.");
 
-                CrockettsClassroom[11][7] = new Place("Mr. Crockett's Desk",
+                CrockettsClassroom[11][7] = new Place("Teacher's Desk",
                                 "Mr. Crockett's desk, he has a pretty cool setup.");
-                CrockettsClassroom[11][8] = new Place("Mr. Crockett's Desk",
+                CrockettsClassroom[11][8] = new Place("Teacher's Desk",
                                 "The other side of his desk, with a extra monitor.");
                 CrockettsClassroom[11][9] = new Place("Closet",
                                 "A closet next to Mr. Crockett's desk. I wonder what's inside it.");
 
         }
-        
+
     public boolean isValid(int r, int c) {
         System.out.println("** in grid is valid " + r + " " + c);
         return (r >= 0 && r < CrockettsClassroom.length && c >= 0 && c < CrockettsClassroom[0].length);
+    }
+
+    public String toString() {
+        String temp = "";
+        for (Place[] row : CrockettsClassroom){
+            for (Place p : row){
+                if(p != null){
+                    if(p.getName().length() >= 7){
+                        temp += p.getName() + "\t|";
+                    }
+                    else{
+                        temp += p.getName() + "\t\t|";
+                    }
+                }
+                else{
+                    temp += "\t\t|";
+                }
+            }
+        temp += "\n";
+        }
+        return temp;
     }
 }
