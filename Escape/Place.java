@@ -13,4 +13,6 @@ public class Place extends NameStuff{
         // foes = new ArrayList<Entity>();
     }
 
+    
+
 }
