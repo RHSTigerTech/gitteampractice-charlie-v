@@ -116,6 +116,10 @@ public class Classroom {
 
     public String toString() {
         String temp = "";
+        for (int i = 0; i < CrockettsClassroom[0].length; i++) {
+            temp += "----------------";
+        }
+        temp += "\n|";
         for (Place[] row : CrockettsClassroom){
             for (Place p : row){
                 if(p != null){
@@ -130,8 +134,16 @@ public class Classroom {
                     temp += "\t\t|";
                 }
             }
-        temp += "\n";
+        temp += "\n|";
+        for (int i = 0; i < CrockettsClassroom[0].length; i++) {
+            temp += "\t\t|";
         }
-        return temp;
+        temp += "\n";
+        for (int i = 0; i < CrockettsClassroom[0].length; i++) {
+            temp += "----------------";
+        }
+        temp += "\n|";
+        }
+        return temp.substring(0, temp.length()-1);
     }
 }

@@ -6,6 +6,8 @@ public class Main {
         Classroom classroom = new Classroom();
 
         System.out.println(classroom);
+
+        Player Charlie = new Player("Charlie", classroom);
     }
     
 }
