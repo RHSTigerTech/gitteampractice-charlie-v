@@ -3,7 +3,10 @@ package Escape;
 public class Classroom {
         private Place[][] CrockettsClassroom;
 
+        //private Player p;
+
         public Classroom() {
+                //this.p = p;
                 int row = 12;
                 int col = 10;
                 CrockettsClassroom = new Place[row][col];
@@ -107,11 +110,22 @@ public class Classroom {
                 CrockettsClassroom[11][9] = new Place("Closet",
                                 "A closet next to Mr. Crockett's desk. I wonder what's inside it.");
 
+                for (int r = 0; r < CrockettsClassroom.length; r++) {
+                    for (int c = 0; c < CrockettsClassroom[r].length; c++) {
+                        if(CrockettsClassroom[r][c] == null){
+                            CrockettsClassroom[r][c] = new Place("", "");
+                        }
+                    }
+                }
         }
 
     public boolean isValid(int r, int c) {
         System.out.println("** in grid is valid " + r + " " + c);
         return (r >= 0 && r < CrockettsClassroom.length && c >= 0 && c < CrockettsClassroom[0].length);
+    }
+
+    public void addPeople(Entity person, int row, int col){
+        CrockettsClassroom[row][col].addPeople(person);
     }
 
     public String toString() {
@@ -120,14 +134,16 @@ public class Classroom {
             temp += "----------------";
         }
         temp += "\n|";
-        for (Place[] row : CrockettsClassroom){
-            for (Place p : row){
-                if(p != null){
-                    if(p.getName().length() >= 7){
-                        temp += p.getName() + "\t|";
+        for (int row = 0; row < CrockettsClassroom.length; row++){
+            for (int col = 0; col < CrockettsClassroom[row].length; col++){
+                //border 
+                // place.toString()
+                if(CrockettsClassroom[row][col] != null){
+                    if(CrockettsClassroom[row][col].getName().length() >= 7){
+                        temp += CrockettsClassroom[row][col].getName() + "\t|";
                     }
                     else{
-                        temp += p.getName() + "\t\t|";
+                        temp += CrockettsClassroom[row][col].getName() + "\t\t|";
                     }
                 }
                 else{
@@ -135,14 +151,23 @@ public class Classroom {
                 }
             }
         temp += "\n|";
-        for (int i = 0; i < CrockettsClassroom[0].length; i++) {
-            temp += "\t\t|";
+        for (int col = 0; col < CrockettsClassroom[0].length; col++) {
+            // if charlie's pos == row and col here print charlie
+            if(CrockettsClassroom[row][col] != null){
+                if(CrockettsClassroom[row][col].hasPeople()){
+                    temp += CrockettsClassroom[row][col].getPeople() + "\t|";
+                }
+                else{
+                    temp += "\t\t|";
+                }  
+            }
+            
         }
         temp += "\n";
         for (int i = 0; i < CrockettsClassroom[0].length; i++) {
             temp += "----------------";
         }
-        temp += "\n|";
+        temp += "-\n|";
         }
         return temp.substring(0, temp.length()-1);
     }

@@ -5,12 +5,12 @@ import java.util.Scanner;
 
 public class Player extends Entity{
     //private ArrayList<Item> items;
-    public int row, col;
+    private int row, col;
     Classroom classroom;
     Scanner scan = new Scanner(System.in);
 
     public Player(String name, Classroom c) {
-        super(name);
+        super(name, "You");
         row = 0;
         col = 0;
         classroom = c;
@@ -49,4 +49,16 @@ public class Player extends Entity{
             System.out.println("Invalid place or direction.\n");
         }
     }
+
+    public void updatePos(){
+    }
+
+    // public String PlayerGrid(String temp){
+    //     int editRow = (3 * row + 1) * 161;
+    //     int editCol = 16 * col + 1;
+    //     int startEdit = editRow + editCol;
+    //     int endEdit = startEdit + 16;
+    //     temp = temp.substring(0, startEdit) + "Charlie\t|" + temp.substring(endEdit);
+    //     return temp;
+    // }
 }
