@@ -1,10 +1,10 @@
 package Escape;
 
 public abstract class Entity extends NameStuff {
-    public Entity(String n) {
-        super(n);
+    public Entity(String name, String description) {
+        super(name, description);
     }
 
-    public abstract int computeBattleNumber();
-
+    // public abstract int computeBattleNumber();
+    // to be implemented
 }

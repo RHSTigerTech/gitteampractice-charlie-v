@@ -1,19 +1,16 @@
 package Escape;
 
-public abstract class Item extends NameStuff {
-    private int value;
+public class Item extends NameStuff {
+    private String rarity;
 
-    public Item(String n, int v) {
-        super(n);
-        value = v;
-    }
-
-    public int getValue() {
-        return value;
+    public Item(String n, String description, String rarity) {
+        super(n, description);
+        this.rarity = rarity;
+        // this.description = description;
     }
 
     public String toString() {
-        return super.toString() + " " + value;
+        return "This is a " + super.toString() + " It is " + rarity + " rarity. ";
     }
 
 }

@@ -9,8 +9,8 @@ public class Enemy extends Entity {
      * @param n name of the enemy
      * @param s strength of the enemy
      */
-    public Enemy(String n, int s) {
-        super(n);
+    public Enemy(String n, String description, int s) {
+        super(n, description);
         strength = s;
     }
 
