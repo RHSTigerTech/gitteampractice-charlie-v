@@ -2,16 +2,15 @@ package Escape;
 
 public class Item extends NameStuff {
     private String rarity;
-    private String description;
 
-    public Item(String n, String rarity, String description) {
-        super(n);
+    public Item(String n, String description, String rarity) {
+        super(n, description);
         this.rarity = rarity;
-        this.description = description;
+        // this.description = description;
     }
 
     public String toString() {
-        return "This is a " + super.toString() + ", which is " + rarity + ". " + description;
+        return "This is a " + super.toString() + " It is " + rarity + " rarity. ";
     }
 
 }
