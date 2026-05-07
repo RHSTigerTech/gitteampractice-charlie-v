@@ -3,9 +3,9 @@ package Escape;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Player extends Entity {
-    // private ArrayList<Item> items;
-    int row, col;
+public class Player extends Entity{
+    //private ArrayList<Item> items;
+    public int row, col;
     Classroom classroom;
     Scanner scan = new Scanner(System.in);
 
