@@ -33,10 +33,14 @@ public class Place extends NameStuff {
         enemies.add(enemySpawned);
     }
 
+    public void removePeople(Entity person) {
+        people.remove(person);
+    }
+
     public String getPeople() {
         String temp = "";
         for (Entity entity : people) {
-            temp += entity + ", ";
+            temp += entity + " ";
         }
         return temp;
     }

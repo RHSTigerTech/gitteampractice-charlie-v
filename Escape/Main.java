@@ -1,17 +1,33 @@
 package Escape;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
+        String input;
+        Scanner scan = new Scanner(System.in);
+
         Classroom classroom = new Classroom();
 
-        Player Charlie = new Player("Charlie", classroom);
-        classroom.addPeople(Charlie, 5, 7);
+        Player charlie = new Player("Charlie", classroom);
+        classroom.addPeople(charlie, 5, 7);
 
         System.out.println(classroom);
 
-        Enemy test = new Enemy("test", "???", 999);
-        classroom.randomEnemySpawn(test, classroom);
+        // Do this when moving
+        while (true) {
+            System.out.println("What do you want to do?");
+            input = scan.next().toLowerCase();
+            if (input.equals("move")) {
+                classroom.removePeople(charlie, charlie.getRow(), charlie.getCol());
+                charlie.move();
+                classroom.addPeople(charlie, charlie.getRow(), charlie.getCol());
+            }
+
+            System.out.print("\033[H\033[2J"); // Keeps terminal tidy
+            System.out.println(classroom);
+        }
 
     }
 
