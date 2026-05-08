@@ -10,7 +10,7 @@ public class Player extends Entity{
     Scanner scan = new Scanner(System.in);
 
     public Player(String name, Classroom c) {
-        super(name);
+        super(name, "You");
         row = 5;
         col = 7;
         classroom = c;

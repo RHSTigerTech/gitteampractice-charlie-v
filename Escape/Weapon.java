@@ -14,6 +14,6 @@ public class Weapon extends Item {
     }
 
     public String toString() {
-        return super.toString() + " It does " + damage + " damage.";
+        return super.toString() + "It does " + damage + " damage.";
     }
 }
