@@ -128,6 +128,10 @@ public class Classroom {
         CrockettsClassroom[row][col].addPeople(person);
     }
 
+    public void removePeople(Entity person, int row, int col){
+        CrockettsClassroom[row][col].removePeople(person);
+    }
+
     public String toString() {
         String temp = "";
         for (int i = 0; i < CrockettsClassroom[0].length; i++) {

@@ -23,10 +23,14 @@ public class Place extends NameStuff {
         people.add(person);
     }
 
+    public void removePeople(Entity person){
+        people.remove(person);
+    }
+
     public String getPeople(){
         String temp = "";
         for (Entity entity : people) {
-            temp += entity + ", ";
+            temp += entity + " ";
         }
         return temp;
     }

@@ -11,8 +11,8 @@ public class Player extends Entity{
 
     public Player(String name, Classroom c) {
         super(name);
-        row = 0;
-        col = 0;
+        row = 5;
+        col = 7;
         classroom = c;
         // items = new ArrayList<Item>();
     }
@@ -21,7 +21,7 @@ public class Player extends Entity{
     // for ()
     // }
 
-    public void move(String direction) {
+    public void move() {
         boolean valid = false;
         System.out.print("What direction do you want to move: ");
         String input = scan.next();
@@ -50,15 +50,11 @@ public class Player extends Entity{
         }
     }
 
-    public void updatePos(){
+    public int getRow(){
+        return row;
     }
 
-    // public String PlayerGrid(String temp){
-    //     int editRow = (3 * row + 1) * 161;
-    //     int editCol = 16 * col + 1;
-    //     int startEdit = editRow + editCol;
-    //     int endEdit = startEdit + 16;
-    //     temp = temp.substring(0, startEdit) + "Charlie\t|" + temp.substring(endEdit);
-    //     return temp;
-    // }
+    public int getCol(){
+        return col;
+    }
 }
