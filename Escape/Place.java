@@ -28,11 +28,13 @@ public class Place extends NameStuff {
     public String getPeople(){
         String temp = "";
         for (Entity entity : people) {
-            temp += entity + " ";
+            temp += entity.getName() + " ";
         }
         return temp;
     }
 
     // toString that lists name, entitys
-
+    public String toString(){
+        return super.toString() + getPeople() + "is there. ";
+    }
 }

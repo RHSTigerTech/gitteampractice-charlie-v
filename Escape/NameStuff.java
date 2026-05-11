@@ -18,6 +18,9 @@ public abstract class NameStuff {
     }
 
     public String toString() {
-        return name + ". " + description;
+        if(name.isEmpty() && description.isEmpty()){
+            return "";
+        }
+        return name + ". " + description + " ";
     }
 }

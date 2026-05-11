@@ -21,6 +21,10 @@ public class Player extends Entity{
     // for ()
     // }
 
+    public void check(){
+        classroom.check(row, col);
+    }
+
     public void move() {
         boolean valid = false;
         System.out.print("What direction do you want to move: ");

@@ -124,6 +124,10 @@ public class Classroom {
         return (r >= 0 && r < CrockettsClassroom.length && c >= 0 && c < CrockettsClassroom[0].length);
     }
 
+    public void check(int r, int c){
+        System.out.println(CrockettsClassroom[r][c]);
+    }
+
     public void addPeople(Entity person, int row, int col){
         CrockettsClassroom[row][col].addPeople(person);
     }
@@ -137,7 +141,7 @@ public class Classroom {
         for (int i = 0; i < CrockettsClassroom[0].length; i++) {
             temp += "----------------";
         }
-        temp += "\n|";
+        temp += "-\n|";
         for (int row = 0; row < CrockettsClassroom.length; row++){
             for (int col = 0; col < CrockettsClassroom[row].length; col++){
                 //border 
