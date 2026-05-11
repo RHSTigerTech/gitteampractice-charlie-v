@@ -50,8 +50,7 @@ public class Classroom {
                 CrockettsClassroom[3][1] = new Place("Empty desk", "An empty desk.");
                 CrockettsClassroom[3][2] = new Place("Empty desk", "An empty desk.");
                 CrockettsClassroom[3][3] = new Place("Empty desk", "An empty desk.");
-                CrockettsClassroom[3][9] = new Place("Empty desk",
-                                "An empty desk that is sat right next to the door.");
+                CrockettsClassroom[3][9] = new Place("Empty desk", "An empty desk that is sat right next to the door.");
 
                 CrockettsClassroom[4][9] = new Place("Door",
                                 "The door that is used the most to get in and out of class.");
