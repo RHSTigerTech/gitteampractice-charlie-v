@@ -51,6 +51,7 @@ public class Player extends Entity {
     }
 
     public void updatePos() {
+
     }
 
     // public String PlayerGrid(String temp){

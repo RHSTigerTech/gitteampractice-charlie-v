@@ -9,12 +9,14 @@ public class Place extends NameStuff {
     // private ArrayList<Item> items;
     private ArrayList<Entity> people;
     private ArrayList<Entity> enemies;
+    private ArrayList<Puzzle> puzzles;
 
     public Place(String name, String description) {
         super(name, description);
         // items = new ArrayList<Item>();
         people = new ArrayList<Entity>();
         enemies = new ArrayList<Entity>();
+        puzzles = new ArrayList<Puzzle>();
     }
 
     public Place(String puzzleName, String description, Puzzle p) {
@@ -37,6 +39,22 @@ public class Place extends NameStuff {
         people.remove(person);
     }
 
+    public int numPuzzles() {
+        return puzzles.size();
+    }
+
+    public void showPuzzle() {
+        if (puzzles.size() > 0) {
+            System.out.println(this.puzzles.get(0));
+
+            // use loop to keeep player stuck playing puzzle until they solve or quit maybe
+
+        } else {
+            System.out.println("No puzzles here.");
+            // do nothing
+        }
+    }
+
     public String getPeople() {
         String temp = "";
         for (Entity entity : people) {
@@ -46,5 +64,13 @@ public class Place extends NameStuff {
     }
 
     // toString that lists name, entitys
+    public String toString() {
+        String s = "";
+
+        if (numPuzzles() > 0) {
+            s += "\n" + puzzles.get(0);
+        }
+        return s;
+    }
 
 }

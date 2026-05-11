@@ -197,4 +197,8 @@ public class Classroom {
                 }
                 return temp.substring(0, temp.length() - 1);
         }
+
+        public Place getPlace(int r, int c) {
+                return CrockettsClassroom[r][c];
+        }
 }

@@ -12,7 +12,12 @@ public class Main {
 
         Player charlie = new Player("Charlie", classroom);
         classroom.addPeople(charlie, 5, 7);
+        // classroom.addPuzzle(10, 3, new Puzzle("question", "answer"));
 
+        // Add the first puzzle
+        // Puzzle whiteboard = new Puzzle("question", "answer", classroom);
+        // classroom.addPuzzle(whiteboard, 11, 2);
+        // classroom.addPuzzle(whiteboard, 11, 3);
         System.out.println(classroom);
 
         // Do this when moving
@@ -27,6 +32,9 @@ public class Main {
 
             System.out.print("\033[H\033[2J"); // Keeps terminal tidy
             System.out.println(classroom);
+
+            System.out.println(); // blank
+            System.out.println(classroom.getPlace(charlie.getRow(), charlie.getCol()));
         }
 
     }

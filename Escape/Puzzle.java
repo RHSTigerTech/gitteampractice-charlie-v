@@ -1,14 +1,9 @@
 package Escape;
 
-public class Puzzle {
-    public Puzzle(String name, String description) {
+public class Puzzle extends NameStuff {
 
-    }
-
-    public void checkTileForPuzzle() {
-        if (CrockettsClassroom[5][5] == ) {
-
-        } 
+    public Puzzle(String puzzleName, String description) {
+        super(puzzleName, description);
     }
 
 }
