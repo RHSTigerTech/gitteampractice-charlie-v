@@ -3,8 +3,8 @@ package Escape;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Player extends Entity{
-    //private ArrayList<Item> items;
+public class Player extends Entity {
+    // private ArrayList<Item> items;
     private int row, col;
     Classroom classroom;
     Scanner scan = new Scanner(System.in);
@@ -54,11 +54,23 @@ public class Player extends Entity{
         }
     }
 
-    public int getRow(){
+    public void updatePos() {
+
+    }
+
+    // public String PlayerGrid(String temp){
+    // int editRow = (3 * row + 1) * 161;
+    // int editCol = 16 * col + 1;
+    // int startEdit = editRow + editCol;
+    // int endEdit = startEdit + 16;
+    // temp = temp.substring(0, startEdit) + "Charlie\t|" + temp.substring(endEdit);
+    // return temp;
+    // }
+    public int getRow() {
         return row;
     }
 
-    public int getCol(){
+    public int getCol() {
         return col;
     }
 }

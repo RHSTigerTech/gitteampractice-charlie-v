@@ -3,10 +3,10 @@ package Escape;
 public class Classroom {
         private Place[][] CrockettsClassroom;
 
-        //private Player p;
+        // private Player p;
 
         public Classroom() {
-                //this.p = p;
+                // this.p = p;
                 int row = 12;
                 int col = 10;
                 CrockettsClassroom = new Place[row][col];
@@ -29,7 +29,8 @@ public class Classroom {
                 CrockettsClassroom[0][9] = new Place("Boxes",
                                 "Bunch of boxes and mechanical parts on a desk. Looks like it's some kids's robotics projects.");
 
-                CrockettsClassroom[1][0] = new Place("Empty desk", "An empty desk facing the backdoor. How engaging.");
+                CrockettsClassroom[1][0] = new Place("Empty desk",
+                                "An empty desk facing the backdoor. How engaging.");
                 CrockettsClassroom[1][1] = new Place("Empty desk",
                                 "An empty desk facing the back of the classroom. How engaging.");
                 CrockettsClassroom[1][2] = new Place("Empty desk",
@@ -49,7 +50,8 @@ public class Classroom {
                 CrockettsClassroom[3][1] = new Place("Empty desk", "An empty desk.");
                 CrockettsClassroom[3][2] = new Place("Empty desk", "An empty desk.");
                 CrockettsClassroom[3][3] = new Place("Empty desk", "An empty desk.");
-                CrockettsClassroom[3][9] = new Place("Empty desk", "An empty desk that is sat right next to the door.");
+                CrockettsClassroom[3][9] = new Place("Empty desk",
+                                "An empty desk that is sat right next to the door.");
 
                 CrockettsClassroom[4][9] = new Place("Door",
                                 "The door that is used the most to get in and out of class.");
@@ -110,73 +112,77 @@ public class Classroom {
                 CrockettsClassroom[11][9] = new Place("Closet",
                                 "A closet next to Mr. Crockett's desk. I wonder what's inside it.");
 
+                // If there's nothing on a tile, the grid prints nt
                 for (int r = 0; r < CrockettsClassroom.length; r++) {
-                    for (int c = 0; c < CrockettsClassroom[r].length; c++) {
-                        if(CrockettsClassroom[r][c] == null){
-                            CrockettsClassroom[r][c] = new Place("", "");
+                        for (int c = 0; c < CrockettsClassroom[r].length; c++) {
+                                if (CrockettsClassroom[r][c] == null) {
+                                        CrockettsClassroom[r][c] = new Place("", "");
+                                }
                         }
-                    }
                 }
         }
 
-    public boolean isValid(int r, int c) {
-        System.out.println("** in grid is valid " + r + " " + c);
-        return (r >= 0 && r < CrockettsClassroom.length && c >= 0 && c < CrockettsClassroom[0].length);
-    }
-
-    public void check(int r, int c){
-        System.out.println(CrockettsClassroom[r][c]);
-    }
-
-    public void addPeople(Entity person, int row, int col){
-        CrockettsClassroom[row][col].addPeople(person);
-    }
-
-    public void removePeople(Entity person, int row, int col){
-        CrockettsClassroom[row][col].removePeople(person);
-    }
-
-    public String toString() {
-        String temp = "";
-        for (int i = 0; i < CrockettsClassroom[0].length; i++) {
-            temp += "----------------";
+        public boolean isValid(int r, int c) {
+                System.out.println("** in grid is valid " + r + " " + c);
+                return (r >= 0 && r < CrockettsClassroom.length && c >= 0 && c < CrockettsClassroom[0].length);
         }
-        temp += "-\n|";
-        for (int row = 0; row < CrockettsClassroom.length; row++){
-            for (int col = 0; col < CrockettsClassroom[row].length; col++){
-                //border 
-                // place.toString()
-                if(CrockettsClassroom[row][col] != null){
-                    if(CrockettsClassroom[row][col].getName().length() >= 7){
-                        temp += CrockettsClassroom[row][col].getName() + "\t|";
-                    }
-                    else{
-                        temp += CrockettsClassroom[row][col].getName() + "\t\t|";
-                    }
+
+        public void check(int r, int c) {
+                System.out.println(CrockettsClassroom[r][c]);
+        }
+
+        public void addPeople(Entity person, int row, int col) {
+                CrockettsClassroom[row][col].addPeople(person);
+        }
+
+        public void removePeople(Entity person, int row, int col) {
+
+                CrockettsClassroom[row][col].removePeople(person);
+        }
+
+        public String toString() {
+                String temp = "";
+                for (int i = 0; i < CrockettsClassroom[0].length; i++) {
+                        temp += "----------------";
                 }
-                else{
-                    temp += "\t\t|";
+                temp += "-\n|";
+                for (int row = 0; row < CrockettsClassroom.length; row++) {
+                        for (int col = 0; col < CrockettsClassroom[row].length; col++) {
+                                // border
+                                // place.toString()
+                                if (CrockettsClassroom[row][col] != null) {
+                                        if (CrockettsClassroom[row][col].getName().length() >= 7) {
+                                                temp += CrockettsClassroom[row][col].getName() + "\t|";
+                                        } else {
+                                                temp += CrockettsClassroom[row][col].getName() + "\t\t|";
+                                        }
+                                } else {
+                                        temp += "\t\t|";
+                                }
+                        }
+                        temp += "\n|";
+                        for (int col = 0; col < CrockettsClassroom[0].length; col++) {
+                                // if charlie's pos == row and col here print charlie
+                                if (CrockettsClassroom[row][col] != null) {
+                                        if (CrockettsClassroom[row][col].hasPeople()) {
+                                                temp += CrockettsClassroom[row][col].getPeople() + "\t|";
+                                        } else {
+                                                temp += "\t\t|";
+                                        }
+                                }
+
+                        }
+
+                        temp += "\n";
+                        for (int i = 0; i < CrockettsClassroom[0].length; i++) {
+                                temp += "----------------";
+                        }
+                        temp += "-\n|";
                 }
-            }
-        temp += "\n|";
-        for (int col = 0; col < CrockettsClassroom[0].length; col++) {
-            // if charlie's pos == row and col here print charlie
-            if(CrockettsClassroom[row][col] != null){
-                if(CrockettsClassroom[row][col].hasPeople()){
-                    temp += CrockettsClassroom[row][col].getPeople() + "\t|";
-                }
-                else{
-                    temp += "\t\t|";
-                }  
-            }
-            
+                return temp.substring(0, temp.length() - 1);
         }
-        temp += "\n";
-        for (int i = 0; i < CrockettsClassroom[0].length; i++) {
-            temp += "----------------";
+
+        public Place getPlace(int r, int c) {
+                return CrockettsClassroom[r][c];
         }
-        temp += "-\n|";
-        }
-        return temp.substring(0, temp.length()-1);
-    }
 }
