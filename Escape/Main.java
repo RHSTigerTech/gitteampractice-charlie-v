@@ -33,6 +33,8 @@ public class Main {
             System.out.print("\033[H\033[2J"); // Keeps terminal tidy
             System.out.println(classroom);
             charlie.check();
+
+            // this is a new change from "Bryan" my evil twin
         }
 
     }
