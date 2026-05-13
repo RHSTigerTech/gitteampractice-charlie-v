@@ -10,6 +10,7 @@ public class Place extends NameStuff {
     private ArrayList<Entity> people;
     private ArrayList<Entity> enemies;
     private ArrayList<Puzzle> puzzles;
+    private ArrayList<Item> items;
 
     public Place(String name, String description) {
         super(name, description);
@@ -17,6 +18,7 @@ public class Place extends NameStuff {
         people = new ArrayList<Entity>();
         enemies = new ArrayList<Entity>();
         puzzles = new ArrayList<Puzzle>();
+        items = new ArrayList<Item>();
     }
 
     public Place(String puzzleName, String description, Puzzle p) {
@@ -34,6 +36,10 @@ public class Place extends NameStuff {
     public void addEnemy(Enemy enemySpawned) {
         enemies.add(enemySpawned);
     }
+
+    // public Item removeItem(Item i) {
+    // return items.remove(i);
+    // }
 
     public void removePeople(Entity person) {
         people.remove(person);
