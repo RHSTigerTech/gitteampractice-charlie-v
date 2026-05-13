@@ -8,20 +8,17 @@ public class Player extends Entity {
     private int row, col;
     Classroom classroom;
     Scanner scan = new Scanner(System.in);
+    ArrayList<Item> inventory;
 
     public Player(String name, Classroom c) {
         super(name, "You");
         row = 5;
         col = 7;
         classroom = c;
-        // items = new ArrayList<Item>();
+        inventory = new ArrayList<Item>();
     }
 
-    // public String showInventory() {
-    // for ()
-    // }
-
-    public void check(){
+    public void check() {
         classroom.check(row, col);
     }
 
@@ -72,5 +69,36 @@ public class Player extends Entity {
 
     public int getCol() {
         return col;
+    }
+
+    public void addToInventory(Item i) { // player.addToInventory(CrockettsClassroom[2][4].getItem())
+        inventory.add(i);
+    }
+
+    public void dropItem() {
+        listInventory();
+        // promt user to select number of item to drop
+        System.out.println("Which item do you want to drop?");
+        String input = scan.nextLine().toLowerCase();
+        int positionToRemove = inventory.indexOf(input);
+        if (positionToRemove >= 0) {
+            inventory.remove(positionToRemove);
+        } else {
+            System.out.println(input + " is not in inventory to drop.");
+        }
+        // for (int i = 0; i < inventory.size(); i++) {
+        // if (input.equalsIgnoreCase(inventory.get(i).getName())) {
+        // inventory.remove(inventory.indexOf(i));
+        // break;
+        // }
+        // }
+
+    }
+
+    public void listInventory() {
+        // print out the player's inventory....
+        for (Item items : inventory) {
+            System.out.println(items + "\n");
+        }
     }
 }

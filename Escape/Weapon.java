@@ -3,8 +3,8 @@ package Escape;
 public class Weapon extends Item {
     private int damage;
 
-    public Weapon(String n, String rarity, String description, int damage) {
-        super(n, rarity, description);
+    public Weapon(String n, String description, String rarity, int damage) {
+        super(n, description, rarity);
         // super(rarity);
         this.damage = damage;
     }

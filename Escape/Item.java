@@ -6,7 +6,6 @@ public class Item extends NameStuff {
     public Item(String n, String description, String rarity) {
         super(n, description);
         this.rarity = rarity;
-        // this.description = description;
     }
 
     public String toString() {
