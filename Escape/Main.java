@@ -30,7 +30,7 @@ public class Main {
                 charlie.move();
                 classroom.addPeople(charlie, charlie.getRow(), charlie.getCol());
             } else if (input.equals("map")) {
-            System.out.println(classroom);
+                System.out.println(classroom);
             } else if (input.equals("help")) {
                 System.out.println("These are the games' commands, note that they are not case sensitive: " + help);
             } else {
