@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class Player extends Entity {
     // private ArrayList<Item> items;
     private int row, col;
-    Classroom classroom;
-    Scanner scan = new Scanner(System.in);
-    ArrayList<Item> inventory;
+    private Classroom classroom;
+    private Scanner scan = new Scanner(System.in);
+    private ArrayList<Item> inventory;
+    private Weapon hands;
+    private Weapon equippedWeapon;
 
     public Player(String name, Classroom c) {
         super(name, "You");
@@ -16,6 +18,8 @@ public class Player extends Entity {
         col = 7;
         classroom = c;
         inventory = new ArrayList<Item>();
+        hands = new Weapon("Hands", "Your scrawny fist", "Common", "Punch", 10);
+        equippedWeapon = hands;
     }
 
     public void check() {
