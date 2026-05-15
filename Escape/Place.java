@@ -37,9 +37,15 @@ public class Place extends NameStuff {
         enemies.add(enemySpawned);
     }
 
-    // public Item removeItem(Item i) {
-    // return items.remove(i);
-    // }
+    public int numItems() {
+        return items.size();
+    }
+
+    public Item removeItem() {
+
+        return items.remove(0);
+
+    }
 
     public void removePeople(Entity person) {
         people.remove(person);

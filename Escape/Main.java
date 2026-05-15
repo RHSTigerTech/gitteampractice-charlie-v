@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         String input;
         Scanner scan = new Scanner(System.in);
-        String help = "move, map, pickup, interact";
+        String help = "move, map, pickup, interact, drop item";
         Classroom classroom = new Classroom();
 
         Player charlie = new Player("Charlie", classroom);
@@ -31,8 +31,16 @@ public class Main {
                 classroom.addPeople(charlie, charlie.getRow(), charlie.getCol());
             } else if (input.equals("map")) {
                 System.out.println(classroom);
+            } else if (input.equals("pickup")) {
+                if (classroom.getPlace(charlie.getRow(), charlie.getCol()).numItems() > 0) {
+                    charlie.addToInventory(classroom.getPlace(charlie.getRow(), charlie.getCol()).removeItem());
+                } else {
+                    System.out.println("No items to pickup.");
+                }
             } else if (input.equals("help")) {
                 System.out.println("These are the games' commands, note that they are not case sensitive: " + help);
+            } else if (input.equals("drop item")) {
+                charlie.dropItem();
             } else {
                 System.out.println("Sorry I don't know that command. Choose from the following: " + help);
             }
