@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         String input;
         Scanner scan = new Scanner(System.in);
-        String help = "move, map, pickup, interact, drop item";
+        String help = "move, map, pickup, drop item, check items";
         Classroom classroom = new Classroom();
 
         Player charlie = new Player("Charlie", classroom);
@@ -41,6 +41,8 @@ public class Main {
                 System.out.println("These are the games' commands, note that they are not case sensitive: " + help);
             } else if (input.equals("drop item")) {
                 charlie.dropItem();
+            } else if (input.equals("check items")){
+                charlie.listInventory();
             } else {
                 System.out.println("Sorry I don't know that command. Choose from the following: " + help);
             }
